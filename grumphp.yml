@@ -1,0 +1,17 @@
+grumphp:
+    git_dir: .
+    bin_dir: vendor/bin
+    ascii:
+        failed: null
+        succeeded: null
+    tasks:
+        phplint: null
+        git_commit_message:
+            allow_empty_message: false
+            matchers:
+                'Must start with: Merge, FEATURE, FIX, CI, MINOR, TYPO, PARTIAL, FORMAT or REFACTOR ': /^(FEATURE|FIX|MINOR|TYPO|FORMAT|REFACTOR|PARTIAL|Merge|CI) /
+            case_insensitive: true
+            multiline: true
+            additional_modifiers: ''
+            max_subject_width: 160
+
