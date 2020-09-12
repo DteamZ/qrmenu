@@ -6,6 +6,16 @@ $ npm install
 
 ```
 
+## Controle
+des regles de controles sont appliqués sur nos commit et dans le cas où on les respecte pas le commit ne passera pas . les règles sont les suivantes
+### PHP
+un code propre sans erreur 
+
+#### les commits 
+- le commit doit commencer par: Merge, FEATURE, FIX, CI, MINOR, TYPO, PARTIAL, FORMAT ou REFACTOR
+- max_subject_width 160 c
+- pas de message vide 
+
 ## Configuration
 
 Créez un fichier .env
