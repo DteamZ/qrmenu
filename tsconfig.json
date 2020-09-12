@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+      "target": "es5",
+      "lib": [
+        "es6",
+        "dom"
+      ],
+      "types": [
+        "node"
+      ],
+      "strict": true,
+      "strictPropertyInitialization": false,
+      "module": "es2015",
+      "moduleResolution": "node",
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true
+    },
+    "include": [
+      "assets/js/*",
+      "assets/js/**/*"
+    ]
+  }
+  
