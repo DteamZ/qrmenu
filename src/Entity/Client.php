@@ -6,11 +6,14 @@ use App\Repository\ClientRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=ClientRepository::class)
  */
-class Client
+class Client implements UserInterface
 {
     /**
      * @ORM\Id
@@ -132,4 +135,25 @@ class Client
 
         return $this;
     }
+
+    public function getPassword(): ?string
+    {
+        return $this->motdepasse;
+    }
+
+    public function setPassword(string $motdepasse): self
+    {
+        $this->motdepasse = $motdepasse;
+
+        return $this;
+    }
+    public function getRoles(){
+        return['ROLE_USER'];
+    }
+    public function getUsername() {
+        $this->getNom();
+    }
+    public function getSalt(){}
+    public function eraseCredentials(){}
+
 }

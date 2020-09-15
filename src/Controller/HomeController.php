@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Client;
 
 class HomeController extends AbstractController
 {
@@ -11,9 +12,12 @@ class HomeController extends AbstractController
      * @Route("/home", name="home")
      */
     public function index()
-    {
-        return $this->render('home/index.html.twig', [
+    {  $entityManager = $this->getDoctrine()->getManager();
+        $client = new Client();
+    
+     return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
         ]);
+
     }
 }
